@@ -13,3 +13,31 @@ ABCCV4.py is the main file of the ABCCV4 desktop application. This application a
 - **[tkinter.messagebox](https://docs.python.org/3/library/tkinter.messagebox.html)**: Module for displaying message boxes in Tkinter applications
 - **[logging](https://docs.python.org/3/library/logging.html)**: Module for logging messages in the application
 
+## 🔑 Setup Instructions
+
+To run this application, you’ll need a `credentials.json` file. Follow these steps to obtain it:
+
+1. **Create a Google Cloud Project**:
+   - Go to the [Google Cloud Console](https://console.cloud.google.com/).
+   - Set up a new project (or select an existing one).
+
+2. **Enable the Google Sheets API**:
+   - In the **APIs & Services** section, search for "Google Sheets API" and enable it for your project.
+   - Repeat for the "Google Drive API" if you need file access permissions.
+
+3. **Create a Service Account**:
+   - In the Cloud Console, go to **APIs & Services > Credentials**.
+   - Click **Create Credentials** and select **Service Account**.
+   - Complete the service account setup.
+
+4. **Generate the `credentials.json` file**:
+   - Under your new service account, click **Add Key** > **Create New Key**.
+   - Choose the **JSON** format; this file will download automatically.
+   - Rename the file to `credentials.json` and place it in your project’s root directory.
+
+5. **Authorize the Service Account**:
+   - Share your Google Sheets document with the service account's email (found in the `credentials.json` file under `client_email`).
+
+Your application will now be able to access Google Sheets using this file. Make sure to keep `credentials.json` secure and **do not share it publicly**.
+
+
